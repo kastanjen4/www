@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
  */
 export function PageContent({
   className,
-  spacing = "space-y-8",
+  spacing = "space-y-12",
   ...props
 }: React.ComponentProps<"div"> & {
   spacing?: `space-y-${number}`;
