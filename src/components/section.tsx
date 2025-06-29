@@ -12,7 +12,7 @@ export default function Section({
 }: React.ComponentProps<"section">) {
   return (
     <section
-      className={cn("mx-auto max-w-4xl space-y-4", className)}
+      className={cn("mx-auto max-w-4xl space-y-4 px-4", className)}
       {...props}
     />
   );
