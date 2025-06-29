@@ -32,6 +32,7 @@ alwaysApply: true
 
     ### UI and Styling
     - Use modern UI frameworks (e.g., Tailwind CSS, Shadcn UI, Radix UI) for styling.
+    - Leverage shadcn as much as possible and feel free to install new components whenever there is one missing
     - Use [lucide-react](mdc:https:/lucide.dev) for all icons. Import only the icons you need from "lucide-react" and use them as React components (e.g., `<Home />`).
     - Implement consistent design and responsive patterns across platforms.
 
