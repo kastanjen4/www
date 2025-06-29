@@ -1,4 +1,5 @@
 import Section from "@/components/section";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -33,6 +34,7 @@ import {
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import folketspark from "/public/folketspark.jpg";
 
 export const metadata: Metadata = {
   title: "BRF Kastanjen 4 - Lugnets oas i stadens puls",
@@ -225,26 +227,19 @@ export default function Home() {
                 </p>
               </div>
 
-              <Card className="border-dashed border-primary/30">
-                <CardContent>
-                  <div className="grid gap-3">
-                    {highlights.map((highlight, index) => {
-                      const IconComponent = highlight.icon;
-                      return (
-                        <div
-                          key={index}
-                          className="flex items-center gap-3 text-sm group hover:text-primary transition-colors"
-                        >
-                          <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                            <IconComponent className="h-4 w-4 text-primary" />
-                          </div>
-                          <span className="font-medium">{highlight.text}</span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </CardContent>
-              </Card>
+              <div className="space-y-3">
+                {highlights.map((highlight, index) => {
+                  const IconComponent = highlight.icon;
+                  return (
+                    <Alert key={index} className="border-dashed">
+                      <IconComponent className="h-4 w-4" />
+                      <AlertDescription className="font-medium">
+                        {highlight.text}
+                      </AlertDescription>
+                    </Alert>
+                  );
+                })}
+              </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg" className="shadow-lg">
@@ -447,15 +442,19 @@ export default function Home() {
 
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-3xl blur-3xl" />
-            <Card className="relative overflow-hidden border-0 shadow-2xl">
-              <div className="aspect-[4/3] relative">
-                <Image
-                  src="/folketspark.jpg"
-                  alt="Folkets Park - nära BRF Kastanjen 4"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+            <Card className="relative overflow-hidden border-0 shadow-2xl aspect-[4/3]">
+              <Image
+                src={folketspark}
+                alt="Folkets Park"
+                placeholder="blur"
+                quality={100}
+                fill
+                sizes="100vw"
+                style={{
+                  objectFit: "cover",
+                }}
+                className="w-full"
+              />
             </Card>
           </div>
         </div>
