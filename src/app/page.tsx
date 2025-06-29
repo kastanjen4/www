@@ -245,7 +245,7 @@ export default function Home() {
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {images.map((image, index) => {
+          {images.map((image) => {
             const IconComponent = image.icon;
             return (
               <div
@@ -294,8 +294,8 @@ export default function Home() {
                 både livliga Möllan samt gågatan i centrum.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Dessutom några minuters gång till Triangeln och "Station
-                Triangeln" för pendling till bl.a. Köpenhamn.
+                Dessutom några minuters gång till Triangeln och &ldquo;Station
+                Triangeln&rdquo; för pendling till bl.a. Köpenhamn.
               </p>
             </div>
 

@@ -6,7 +6,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import { Building2, Mail, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Image from "next/image";
