@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Förråd och lokaler att hyra - BRF Kastanjen 4",
   description:
-    "Hyra extra förråd, lokaler eller MC-parkering i BRF Kastanjen 4. Från 120 kr/mån för miniförråd till stora lokaler på 34 m². Kontakta Mike på 0707816185 för visning.",
+    "Hyra extra förråd och lokaler från 120 kr/mån. MC-parkering, källarlokaler och förråd i olika storlekar. Kontakta styrelsen för visning och mer information.",
   keywords: [
     "förråd",
     "lokaler",
@@ -167,8 +167,8 @@ export default function LokalerForrad() {
       </div>
 
       <div className="flex items-center gap-3 mt-16 mb-6">
-        <XCircle className="h-6 w-6 text-red-600 dark:text-red-400" />
-        <h2 className="mb-0 text-red-700 dark:text-red-300">Uthyrda</h2>
+        <XCircle className="h-6 w-6 text-gray-600 dark:text-gray-400" />
+        <h2 className="mb-0 text-gray-700 dark:text-gray-300">Uthyrda</h2>
       </div>
 
       <div className="grid gap-4">
@@ -177,26 +177,26 @@ export default function LokalerForrad() {
           return (
             <div
               key={index}
-              className="flex flex-col sm:flex-row items-start gap-4 p-4 sm:p-6 border border-red-200 dark:border-red-800 bg-red-50/50 dark:bg-red-950/20 rounded-lg opacity-75"
+              className="flex flex-col sm:flex-row items-start gap-4 p-4 sm:p-6 border border-gray-200 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-800/20 rounded-lg opacity-75"
             >
-              <div className="rounded-full bg-red-100 dark:bg-red-900 p-2 flex-shrink-0">
-                <IconComponent className="h-5 w-5 text-red-600 dark:text-red-400" />
+              <div className="rounded-full bg-gray-100 dark:bg-gray-800 p-2 flex-shrink-0">
+                <IconComponent className="h-5 w-5 text-gray-600 dark:text-gray-400" />
               </div>
               <div className="flex-1 w-full">
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4 mb-3">
-                  <h3 className="font-semibold text-red-900 dark:text-red-100 text-lg mb-0">
+                  <h3 className="font-semibold text-gray-700 dark:text-gray-300 text-lg mb-0">
                     {space.name}
                   </h3>
                   <div className="flex items-center gap-4 sm:flex-col sm:items-end sm:gap-1">
-                    <div className="bg-red-100 dark:bg-red-900 px-2 py-1 rounded text-sm font-medium text-red-700 dark:text-red-300">
+                    <div className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-sm font-medium text-gray-600 dark:text-gray-400">
                       {space.size}
                     </div>
-                    <div className="text-xl font-bold text-red-800 dark:text-red-200">
+                    <div className="text-xl font-bold text-gray-600 dark:text-gray-400">
                       {space.price}
                     </div>
                   </div>
                 </div>
-                <p className="text-sm text-red-700 dark:text-red-300 leading-relaxed mb-0">
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-0">
                   {space.description}
                 </p>
               </div>
