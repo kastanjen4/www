@@ -2,13 +2,7 @@ import Section from "@/components/section";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   HoverCard,
   HoverCardContent,
@@ -28,13 +22,22 @@ import {
   Star,
   TreePine,
   Users,
-  Wifi,
   Zap,
 } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+// Static image imports for blur placeholders
+import balkongvy from "/public/balkongvy.jpg";
 import folketspark from "/public/folketspark.jpg";
+import innergarden from "/public/innergarden.jpg";
+import kastanjetrad from "/public/kastanjetrad.jpg";
+import lekplats from "/public/lekplats.jpg";
+import mollevangstorget from "/public/mollevangstorget.jpg";
+import partytaket from "/public/partytaket.jpg";
+import stknutstorg from "/public/stknutstorg.jpg";
+import triangeln from "/public/triangeln.jpg";
 
 export const metadata: Metadata = {
   title: "BRF Kastanjen 4 - Lugnets oas i stadens puls",
@@ -61,56 +64,56 @@ export const metadata: Metadata = {
 export default function Home() {
   const images = [
     {
-      src: "/folketspark.jpg",
+      src: folketspark,
       alt: "Folkets park",
       icon: TreePine,
       category: "Närområdet",
       description: "Malmös gröna hjärta med parker och aktiviteter",
     },
     {
-      src: "/stknutstorg.jpg",
+      src: stknutstorg,
       alt: "S:t Knuts torg",
       icon: MapPin,
       category: "Närområdet",
       description: "Charmigt torg med caféer och butiker",
     },
     {
-      src: "/balkongvy.jpg",
+      src: balkongvy,
       alt: "Balkongvy över gården",
       icon: TreePine,
       category: "Fastigheten",
       description: "Lugn och grön innergård",
     },
     {
-      src: "/innergarden.jpg",
+      src: innergarden,
       alt: "Innergården",
       icon: TreePine,
       category: "Fastigheten",
       description: "Gemensam mötesplats för alla boende",
     },
     {
-      src: "/lekplats.jpg",
+      src: lekplats,
       alt: "Lekplats på innergården",
       icon: TreePine,
       category: "Fastigheten",
       description: "Säker lekplats för barn",
     },
     {
-      src: "/partytaket.jpg",
+      src: partytaket,
       alt: "Party-taket",
       icon: TreePine,
       category: "Fastigheten",
       description: "Taketerrass för gemensamma aktiviteter",
     },
     {
-      src: "/triangeln.jpg",
+      src: triangeln,
       alt: "Triangeln köpcentrum",
       icon: MapPin,
       category: "Närområdet",
       description: "Shopping och kollektivtrafik",
     },
     {
-      src: "/mollevangstorget.jpg",
+      src: mollevangstorget,
       alt: "Möllevångstorget",
       icon: MapPin,
       category: "Närområdet",
@@ -119,14 +122,6 @@ export default function Home() {
   ];
 
   const features = [
-    {
-      icon: Wifi,
-      title: "Bredband 100 Mbit",
-      description:
-        "Höghastighetsfiberbredband inkluderat i månadsavgiften för alla lägenheter",
-      highlight: "Ingår",
-      color: "bg-blue-500",
-    },
     {
       icon: Car,
       title: "Parkeringsmöjligheter",
@@ -260,12 +255,13 @@ export default function Home() {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-3xl" />
               <Image
-                src="/kastanjetrad.jpg"
+                src={kastanjetrad}
                 alt="Kastanjeträd - BRF Kastanjen 4"
                 width={600}
                 height={400}
                 className="relative mx-auto aspect-[3/2] overflow-hidden rounded-2xl object-cover shadow-2xl border"
                 priority
+                placeholder="blur"
               />
             </div>
           </div>
@@ -287,40 +283,23 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => {
             const IconComponent = feature.icon;
             return (
-              <Card
-                key={index}
-                className="group hover:shadow-lg transition-all duration-300 border-0 shadow-md hover:scale-105"
-              >
-                <CardHeader className="text-center space-y-4">
-                  <div className="relative mx-auto w-fit">
-                    <div
-                      className={`rounded-2xl p-4 ${feature.color}/10 group-hover:${feature.color}/20 transition-colors`}
-                    >
-                      <IconComponent
-                        className={`h-8 w-8 ${feature.color.replace(
-                          "bg-",
-                          "text-"
-                        )}`}
-                      />
-                    </div>
-                    <Badge
-                      variant="secondary"
-                      className="absolute -top-2 -right-2 text-xs font-semibold"
-                    >
-                      {feature.highlight}
-                    </Badge>
+              <Card key={index} className="text-center space-y-4 p-6">
+                <div className="space-y-3">
+                  <Badge variant="outline" className="text-xs">
+                    {feature.highlight}
+                  </Badge>
+                  <div className="mx-auto w-fit p-3 bg-primary/10 rounded-xl">
+                    <IconComponent className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle className="text-lg">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-center leading-relaxed">
+                  <h3 className="font-semibold text-lg">{feature.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {feature.description}
-                  </CardDescription>
-                </CardContent>
+                  </p>
+                </div>
               </Card>
             );
           })}
@@ -346,7 +325,7 @@ export default function Home() {
           {images.map((image) => {
             const IconComponent = image.icon;
             return (
-              <HoverCard key={image.src}>
+              <HoverCard key={image.alt}>
                 <HoverCardTrigger asChild>
                   <Card className="group relative aspect-square overflow-hidden cursor-pointer border-0 shadow-md hover:shadow-xl transition-all duration-300">
                     <Image
@@ -355,6 +334,7 @@ export default function Home() {
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
                       sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                      placeholder="blur"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute inset-0 flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

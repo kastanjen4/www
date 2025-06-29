@@ -14,6 +14,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+import logo from "/public/logo.png";
 import type { Organization, WithContext } from "schema-dts";
 import "./globals.css";
 
@@ -139,7 +140,7 @@ export default function RootLayout({
                 <Link href="/" className="font-bold flex items-center gap-2">
                   <span className="flex items-center gap-2">
                     <Image
-                      src="/logo.png"
+                      src={logo}
                       alt="BRF Kastanjen 4 Logo"
                       width={1215}
                       height={205}
