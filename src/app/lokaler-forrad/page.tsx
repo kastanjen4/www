@@ -124,27 +124,10 @@ export default function LokalerForrad() {
   const availableSpaces = spaces.filter((space) => space.available);
   const rentedSpaces = spaces.filter((space) => !space.available);
 
-  // Generate JSON-LD structured data
+  // Generate JSON-LD structured data for rental spaces
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://brfkastanjen4.se/#organization",
-        name: "BRF Kastanjen 4",
-        url: "https://brfkastanjen4.se",
-        email: "styrelsen@brfkastanjen4.se",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "Almbacksgatan 16",
-          addressLocality: "Malmö",
-          addressCountry: "SE",
-        },
-        areaServed: {
-          "@type": "City",
-          name: "Malmö",
-        },
-      },
       {
         "@type": "Service",
         "@id": "https://brfkastanjen4.se/lokaler-forrad#service",
@@ -152,7 +135,9 @@ export default function LokalerForrad() {
         description:
           "Hyra extra förråd och lokaler från 120 kr/mån. MC-parkering, källarlokaler och förråd i olika storlekar.",
         provider: {
-          "@id": "https://brfkastanjen4.se/#organization",
+          "@type": "Organization",
+          name: "BRF Kastanjen 4",
+          url: "https://brfkastanjen4.se",
         },
         serviceType: "Storage and Commercial Space Rental",
         areaServed: {
@@ -181,13 +166,15 @@ export default function LokalerForrad() {
           },
           availability: "https://schema.org/InStock",
           seller: {
-            "@id": "https://brfkastanjen4.se/#organization",
+            "@type": "Organization",
+            name: "BRF Kastanjen 4",
           },
           businessFunction: "https://schema.org/LeaseOut",
           availabilityStarts: new Date().toISOString().split("T")[0],
         },
         provider: {
-          "@id": "https://brfkastanjen4.se/#organization",
+          "@type": "Organization",
+          name: "BRF Kastanjen 4",
         },
         location: {
           "@type": "Place",
