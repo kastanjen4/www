@@ -1,4 +1,5 @@
 import Section from "@/components/section";
+import { JsonLd } from "@/components/json-ld";
 import { Car, CheckCircle, Home, Mail, Package, XCircle } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -117,7 +118,7 @@ export default function LokalerForrad() {
       available: false,
       category: "CommercialSpace",
     },
-  ];
+  ] as const;
 
   // Split the array based on availability
   const availableSpaces = spaces.filter((space) => space.available);
@@ -251,6 +252,14 @@ export default function LokalerForrad() {
                     itemScope
                     itemType="https://schema.org/Product"
                   >
+                    <JsonLd
+                      schema={{
+                        "@context": "https://schema.org",
+                        "@type": "SelfStorage",
+                        name: space.name,
+                        description: space.description,
+                      }}
+                    />
                     <div className="rounded-full bg-gray-100 dark:bg-gray-800 p-2 flex-shrink-0">
                       <IconComponent className="h-5 w-5 text-gray-600 dark:text-gray-400" />
                     </div>
@@ -302,6 +311,33 @@ export default function LokalerForrad() {
             </div>
           </section>
         </article>
+        {spaces
+          .filter((space) => space.category !== "ParkingSpace")
+          .map((space, index) => (
+            <JsonLd
+              key={index}
+              schema={{
+                "@context": "https://schema.org",
+                "@type": "SelfStorage",
+                name: space.name,
+                description: space.description,
+                priceRange: space.price,
+              }}
+            />
+          ))}
+        {spaces
+          .filter((space) => space.category === "ParkingSpace")
+          .map((space, index) => (
+            <JsonLd
+              key={index}
+              schema={{
+                "@context": "https://schema.org",
+                "@type": "ParkingFacility",
+                name: space.name,
+                description: space.description,
+              }}
+            />
+          ))}
       </Section>
     </>
   );
