@@ -259,16 +259,16 @@ export default function Home() {
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                   sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute inset-0 flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
-                      <IconComponent className="h-4 w-4 text-white" />
-                      <span className="text-xs text-white/80 font-medium">
+                      <IconComponent className="h-4 w-4 text-primary" />
+                      <span className="text-xs text-primary/80 font-medium">
                         {image.category}
                       </span>
                     </div>
-                    <p className="text-white text-sm font-semibold leading-tight">
+                    <p className="text-foreground text-sm font-semibold leading-tight">
                       {image.alt}
                     </p>
                   </div>
@@ -371,7 +371,7 @@ export default function Home() {
               <Button
                 asChild
                 size="lg"
-                className="bg-white text-primary hover:bg-white/90 border-white shadow-lg"
+                className="bg-background text-foreground hover:bg-background/90 border-background shadow-lg"
               >
                 <Link
                   href="mailto:styrelsen@brfkastanjen4.se"
