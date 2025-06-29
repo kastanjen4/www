@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 
 interface BoardMember {
@@ -211,16 +211,12 @@ export default function Styrelsen() {
 
       {/* Contact Section */}
       <div className="space-y-6">
-        <Alert className="border-primary/20 bg-primary/5">
+        <Alert>
           <Mail className="h-5 w-5 text-primary" />
+          <AlertTitle>Intresserad av att gå med i styrelsen?</AlertTitle>
           <AlertDescription className="text-base">
             <div className="space-y-2">
-              <p className="font-medium">
-                Intresserad av att gå med i styrelsen?
-              </p>
-              <p className="text-muted-foreground">
-                Hör av dig på mailen så berättar vi mer!
-              </p>
+              <p>Hör av dig på mailen så berättar vi mer!</p>
               <div className="flex flex-wrap gap-2 mt-3">
                 <Button asChild size="sm" className="h-8">
                   <a href="mailto:styrelsen@brfkastanjen4.se">
