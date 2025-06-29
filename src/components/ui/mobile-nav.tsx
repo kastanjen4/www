@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,12 +11,20 @@ import {
   SheetContent,
   SheetHeader,
   SheetFooter,
+  SheetTitle,
 } from "@/components/ui/sheet";
 import { navLinks } from "@/components/ui/nav-links";
 
 export function MobileNav() {
+  const [open, setOpen] = React.useState(false);
+  const pathname = usePathname();
+
+  React.useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
   return (
-    <Sheet>
+    <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
         <Button
           variant="ghost"
@@ -35,7 +44,7 @@ export function MobileNav() {
             <div className="p-2 bg-primary/10 rounded-lg">
               <Building2 className="h-5 w-5 text-primary" />
             </div>
-            <span className="font-bold">Kastanjen 4</span>
+            <SheetTitle className="font-bold">Kastanjen 4</SheetTitle>
           </div>
         </SheetHeader>
         <nav className="flex-1 p-6">

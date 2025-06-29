@@ -108,7 +108,7 @@ export default function Home() {
       icon: Zap,
       title: "Moderna faciliteter",
       description: "Bastu, tvättstuga, cykelrum",
-      highlight: "Premium",
+      highlight: "Inkluderat",
     },
     {
       icon: Shield,
@@ -201,7 +201,7 @@ export default function Home() {
             trivsel som prioritet.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
           {features.map((feature, index) => {
             const IconComponent = feature.icon;
             return (

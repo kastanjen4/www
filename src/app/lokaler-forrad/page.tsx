@@ -1,5 +1,5 @@
 import Section from "@/components/section";
-import { Home, Package, Car, CheckCircle, XCircle, Phone } from "lucide-react";
+import { Car, CheckCircle, Home, Mail, Package, XCircle } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -109,18 +109,20 @@ export default function LokalerForrad() {
         </p>
       </div>
 
-      <div className="flex items-start gap-3 p-4 bg-blue-50 border border-blue-200 rounded-lg mb-8 max-w-3xl">
-        <Phone className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+      <div className="flex items-start gap-3 p-4 bg-blue-50 border border-blue-200 rounded-lg mb-6 max-w-3xl">
+        <Mail className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
         <div>
-          <p className="font-medium text-sm text-blue-900 mb-1">
-            Kontaktperson
-          </p>
+          <p className="font-medium text-sm text-blue-900 mb-1">Kontakt</p>
           <p className="text-sm text-blue-700 mb-0">
-            Styrelsens ansvarige för lokalerna är Mike och nås på{" "}
-            <strong>0707816185</strong>.
-            <br />
-            För att få se lokaler eller frågor om lokalerna - skicka ett mess
-            till honom!
+            För att få se lokaler eller frågor om lokalerna - skicka ett mail
+            till styrelsen på{" "}
+            <a
+              href="mailto:styrelsen@brfkastanjen4.se"
+              className="font-semibold hover:text-blue-800 transition-colors"
+            >
+              styrelsen@brfkastanjen4.se
+            </a>
+            !
           </p>
         </div>
       </div>
