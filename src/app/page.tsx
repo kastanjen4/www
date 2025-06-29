@@ -132,7 +132,7 @@ export default function Home() {
     },
     {
       icon: Zap,
-      title: "Moderna faciliteter",
+      title: "Våra faciliteter",
       description:
         "Bastu, tvättstuga, cykelrum och nyrenoverade gemensamma utrymmen",
       highlight: "Inkluderat",
@@ -278,7 +278,7 @@ export default function Home() {
             Fantastiska faciliteter
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Föreningen erbjuder moderna gemensamma faciliteter och sätter
+            Föreningen erbjuder gemensamma faciliteter och sätter
             trivsel som högsta prioritet.
           </p>
         </div>

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Om föreningen - BRF Kastanjen 4",
     description:
-      "Lär dig mer om vår bostadsrättsförening med 17 lägenheter och moderna faciliteter i centrala Malmö.",
+      "Lär dig mer om vår bostadsrättsförening med 17 lägenheter och trevliga faciliteter i centrala Malmö.",
     type: "website",
     locale: "sv_SE",
   },
