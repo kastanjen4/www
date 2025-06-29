@@ -1,3 +1,4 @@
+import { PageContent } from "@/components/page-content";
 import Section from "@/components/section";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
@@ -200,7 +201,7 @@ export default function Home() {
   ];
 
   return (
-    <>
+    <PageContent className="pb-0">
       <Section>
         <div className="relative">
           <div className="grid gap-8 lg:grid-cols-[1fr_500px] lg:gap-16 xl:grid-cols-[1fr_600px] items-center">
@@ -270,10 +271,8 @@ export default function Home() {
 
       {/* Features Section */}
       <Section>
-        <div className="text-center space-y-4 mb-12">
-          <Badge variant="outline" className="mb-4">
-            Vad vi erbjuder
-          </Badge>
+        <div className="text-center space-y-4">
+          <Badge variant="outline">Vad vi erbjuder</Badge>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
             Fantastiska faciliteter
           </h2>
@@ -308,10 +307,8 @@ export default function Home() {
 
       {/* Image Gallery Section */}
       <Section>
-        <div className="text-center space-y-4 mb-12">
-          <Badge variant="outline" className="mb-4">
-            Upptäck området
-          </Badge>
+        <div className="text-center space-y-4">
+          <Badge variant="outline">Upptäck området</Badge>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
             Perfekt läge i Malmö
           </h2>
@@ -338,13 +335,15 @@ export default function Home() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute inset-0 flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <Badge variant="secondary" className="w-fit mb-2">
-                        <IconComponent className="h-3 w-3 mr-1" />
-                        {image.category}
-                      </Badge>
-                      <p className="text-foreground text-sm font-semibold leading-tight">
-                        {image.alt}
-                      </p>
+                      <div className="space-y-2">
+                        <Badge variant="secondary" className="w-fit">
+                          <IconComponent className="h-3 w-3 mr-1" />
+                          {image.category}
+                        </Badge>
+                        <p className="text-foreground text-sm font-semibold leading-tight">
+                          {image.alt}
+                        </p>
+                      </div>
                     </div>
                   </Card>
                 </HoverCardTrigger>
@@ -402,14 +401,14 @@ export default function Home() {
                       <div className={`rounded-lg bg-primary/10 p-3`}>
                         <IconComponent className={`h-5 w-5 ${benefit.color}`} />
                       </div>
-                      <div className="flex-1">
+                      <div className="flex-1 space-y-1">
                         <div className="flex items-center justify-between">
                           <h4 className="font-semibold">{benefit.name}</h4>
                           <Badge variant="secondary" className="text-xs">
                             {benefit.distance}
                           </Badge>
                         </div>
-                        <p className="text-sm text-muted-foreground mt-1">
+                        <p className="text-sm text-muted-foreground">
                           {benefit.description}
                         </p>
                       </div>
@@ -440,7 +439,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <div className="w-full pt-16">
+      <div>
         <GoogleMapsEmbed
           apiKey="AIzaSyA-v4IZcNgTJ20JnwMmwoMH-6wt1xAqMKY"
           height={200}
@@ -448,42 +447,40 @@ export default function Home() {
           mode="place"
           q="Almbacksgatan 16, Malmö"
         />
-      </div>
 
-      <Section>
-        <div className="text-center space-y-8">
-          <div className="space-y-6">
-            <Badge variant="outline" className="mb-4">
-              Kontakta oss
-            </Badge>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Välkommen att bo hos oss
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-              Föreningen sätter trivsel i sitt hem som prioritet, både för oss
-              som bor här och för dig som funderar på att flytta hit!
-            </p>
-          </div>
+        <div className="bg-gradient-to-r from-primary/5 to-primary/10 border-primary/20">
+          <Section className="text-center space-y-8 py-8">
+            <div className="space-y-6">
+              <Badge variant="outline">Kontakta oss</Badge>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                Välkommen att bo hos oss
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
+                Föreningen sätter trivsel i sitt hem som prioritet, både för oss
+                som bor här och för dig som funderar på att flytta hit!
+              </p>
+            </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="shadow-lg">
-              <Link href="/maklarinfo" className="flex items-center gap-2">
-                <FileText className="h-4 w-4" />
-                Mäklarinformation
-              </Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="shadow-lg">
-              <Link
-                href="mailto:styrelsen@brfkastanjen4.se"
-                className="flex items-center gap-2"
-              >
-                <Mail className="h-4 w-4" />
-                Kontakta styrelsen
-              </Link>
-            </Button>
-          </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="shadow-lg">
+                <Link href="/maklarinfo" className="flex items-center gap-2">
+                  <FileText className="h-4 w-4" />
+                  Mäklarinformation
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="shadow-lg">
+                <Link
+                  href="mailto:styrelsen@brfkastanjen4.se"
+                  className="flex items-center gap-2"
+                >
+                  <Mail className="h-4 w-4" />
+                  Kontakta styrelsen
+                </Link>
+              </Button>
+            </div>
+          </Section>
         </div>
-      </Section>
-    </>
+      </div>
+    </PageContent>
   );
 }

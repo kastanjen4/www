@@ -1,3 +1,4 @@
+import { PageContent } from "@/components/page-content";
 import Section from "@/components/section";
 import { JsonLd } from "@/components/json-ld";
 import { Car, CheckCircle, Home, Mail, Package, XCircle } from "lucide-react";
@@ -281,89 +282,95 @@ export default function LokalerForrad() {
   };
 
   return (
-    <Section>
-      <article>
-        <header className="prose dark:prose-invert mb-8">
-          <h1>Förråd och rum att hyra</h1>
-          <p>
-            Här är listan över lokalerna som går att hyra ihop med en kort
-            beskrivning, tillgängligheten just nu och hyreskostnaden per månad.
-          </p>
-        </header>
-
-        <Alert className="mb-8 max-w-3xl">
-          <Mail className="h-4 w-4" />
-          <AlertTitle>Kontakt</AlertTitle>
-          <AlertDescription>
+    <PageContent>
+      <Section>
+        <article className="space-y-8">
+          <header className="prose dark:prose-invert">
+            <h1>Förråd och rum att hyra</h1>
             <p>
-              För att få se lokaler eller frågor om lokalerna - skicka ett mail
-              till styrelsen på{" "}
-              <a
-                href="mailto:styrelsen@brfkastanjen4.se"
-                className="font-semibold hover:text-primary transition-colors underline"
-              >
-                styrelsen@brfkastanjen4.se
-              </a>
-              !
+              Här är listan över lokalerna som går att hyra ihop med en kort
+              beskrivning, tillgängligheten just nu och hyreskostnaden per
+              månad.
             </p>
-          </AlertDescription>
-        </Alert>
+          </header>
 
-        <Tabs defaultValue="available" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 mb-8">
-            <TabsTrigger value="available" className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4" />
-              Tillgängliga ({availableSpaces.length})
-            </TabsTrigger>
-            <TabsTrigger value="rented" className="flex items-center gap-2">
-              <XCircle className="h-4 w-4" />
-              Uthyrda ({rentedSpaces.length})
-            </TabsTrigger>
-          </TabsList>
+          <Alert>
+            <Mail className="h-4 w-4" />
+            <AlertTitle>Kontakt</AlertTitle>
+            <AlertDescription>
+              <p>
+                För att få se lokaler eller frågor om lokalerna - skicka ett
+                mail till styrelsen på{" "}
+                <a
+                  href="mailto:styrelsen@brfkastanjen4.se"
+                  className="font-semibold hover:text-primary transition-colors underline"
+                >
+                  styrelsen@brfkastanjen4.se
+                </a>
+                !
+              </p>
+            </AlertDescription>
+          </Alert>
 
-          <TabsContent value="available">
-            {renderAccordionForSpaces(
-              groupSpacesByCategory(availableSpaces),
-              true
-            )}
-          </TabsContent>
+          <Tabs defaultValue="available" className="w-full">
+            <TabsList className="grid w-full grid-cols-2">
+              <TabsTrigger
+                value="available"
+                className="flex items-center gap-2"
+              >
+                <CheckCircle className="h-4 w-4" />
+                Tillgängliga ({availableSpaces.length})
+              </TabsTrigger>
+              <TabsTrigger value="rented" className="flex items-center gap-2">
+                <XCircle className="h-4 w-4" />
+                Uthyrda ({rentedSpaces.length})
+              </TabsTrigger>
+            </TabsList>
 
-          <TabsContent value="rented">
-            {renderAccordionForSpaces(
-              groupSpacesByCategory(rentedSpaces),
-              false
-            )}
-          </TabsContent>
-        </Tabs>
-      </article>
+            <TabsContent value="available">
+              {renderAccordionForSpaces(
+                groupSpacesByCategory(availableSpaces),
+                true
+              )}
+            </TabsContent>
 
-      {spaces
-        .filter((space) => space.category !== "ParkingSpace")
-        .map((space, index) => (
-          <JsonLd
-            key={index}
-            schema={{
-              "@context": "https://schema.org",
-              "@type": "SelfStorage",
-              name: space.name,
-              description: space.description,
-              priceRange: space.price,
-            }}
-          />
-        ))}
-      {spaces
-        .filter((space) => space.category === "ParkingSpace")
-        .map((space, index) => (
-          <JsonLd
-            key={index}
-            schema={{
-              "@context": "https://schema.org",
-              "@type": "ParkingFacility",
-              name: space.name,
-              description: space.description,
-            }}
-          />
-        ))}
-    </Section>
+            <TabsContent value="rented">
+              {renderAccordionForSpaces(
+                groupSpacesByCategory(rentedSpaces),
+                false
+              )}
+            </TabsContent>
+          </Tabs>
+        </article>
+
+        {spaces
+          .filter((space) => space.category !== "ParkingSpace")
+          .map((space, index) => (
+            <JsonLd
+              key={index}
+              schema={{
+                "@context": "https://schema.org",
+                "@type": "SelfStorage",
+                name: space.name,
+                description: space.description,
+                priceRange: space.price,
+              }}
+            />
+          ))}
+        {spaces
+          .filter((space) => space.category === "ParkingSpace")
+          .map((space, index) => (
+            <JsonLd
+              key={index}
+              schema={{
+                "@context": "https://schema.org",
+                "@type": "ParkingFacility",
+                name: space.name,
+                description: space.description,
+              }}
+            />
+          ))}
+      </Section>
+    </PageContent>
   );
 }

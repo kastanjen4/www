@@ -1,3 +1,4 @@
+import { PageContent } from "@/components/page-content";
 import Section from "@/components/section";
 import { Crown, Mail, User, type LucideIcon } from "lucide-react";
 import { siFacebook } from "simple-icons";
@@ -157,67 +158,73 @@ export default function Styrelsen() {
   ];
 
   return (
-    <Section className="space-y-8">
-      <div className="prose dark:prose-invert">
+    <PageContent>
+      <Section className="prose dark:prose-invert">
         <h1>Styrelsen</h1>
         <p>
           Styrelsen består av {boardMembers.length} ledamöter och{" "}
           {alternates.length} suppleanter och har styrelsemöte varje månad.
         </p>
-      </div>
+      </Section>
       {/* Header Section */}
-      <Card className="bg-gradient-to-r from-primary/5 to-primary/10 border-primary/20">
-        <CardContent className="p-6">
-          <p className="text-center text-muted-foreground">
-            Vill ni få ett ansikte på oss så är de flesta med i vår
-            facebook-grupp{" "}
-            <a
-              href={facebookGroupUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-foreground hover:text-primary transition-colors underline decoration-2 underline-offset-2"
-            >
-              Kastanjen 4
-            </a>
-            <br />
-            Bara att stoppa oss om vi stöter på varandra i trappen!
-          </p>
-        </CardContent>
-      </Card>
+      <Section>
+        <Card className="bg-gradient-to-r from-primary/5 to-primary/10 border-primary/20">
+          <CardContent className="p-6">
+            <p className="text-center text-muted-foreground">
+              Vill ni få ett ansikte på oss så är de flesta med i vår
+              facebook-grupp{" "}
+              <a
+                href={facebookGroupUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-foreground hover:text-primary transition-colors underline decoration-2 underline-offset-2"
+              >
+                Kastanjen 4
+              </a>
+              <br />
+              Bara att stoppa oss om vi stöter på varandra i trappen!
+            </p>
+          </CardContent>
+        </Card>
+      </Section>
 
       {/* Board Members Section */}
-      <div className="space-y-6">
-        <div className="flex items-center gap-3">
-          <Crown className="h-6 w-6 text-primary" />
-          <h2 className="text-2xl font-semibold">Styrelseledamöter</h2>
-        </div>
+      <Section>
+        <div className="space-y-6">
+          <div className="flex items-center gap-3">
+            <Crown className="h-6 w-6 text-primary" />
+            <h2 className="text-2xl font-semibold">Styrelseledamöter</h2>
+          </div>
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {boardMembers.map(renderBoardMember)}
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {boardMembers.map(renderBoardMember)}
+          </div>
         </div>
-      </div>
+      </Section>
 
       {/* Alternates Section */}
-      <div className="space-y-6 mb-8">
-        <div className="flex items-center gap-3">
-          <User className="h-6 w-6 text-primary" />
-          <h2 className="text-2xl font-semibold">Suppleanter</h2>
-        </div>
+      <Section>
+        <div className="space-y-6">
+          <div className="flex items-center gap-3">
+            <User className="h-6 w-6 text-primary" />
+            <h2 className="text-2xl font-semibold">Suppleanter</h2>
+          </div>
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {alternates.map(renderBoardMember)}
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {alternates.map(renderBoardMember)}
+          </div>
         </div>
-      </div>
+      </Section>
 
       {/* Contact Section */}
-      <div className="space-y-6">
+      <Section className="space-y-6">
         <Alert>
           <Mail className="h-5 w-5 text-primary" />
           <AlertTitle>Intresserad av att gå med i styrelsen?</AlertTitle>
           <AlertDescription className="text-base">
-            <div className="space-y-2">
+            <div className="space-y-3">
               <p>Hör av dig på mailen så berättar vi mer!</p>
-              <div className="flex flex-wrap gap-2 mt-3">
+              <div className="flex flex-wrap gap-2">
                 <Button asChild size="sm" className="h-8">
                   <a href="mailto:styrelsen@brfkastanjen4.se">
                     <Mail className="h-3 w-3 mr-2" />
@@ -244,7 +251,7 @@ export default function Styrelsen() {
             </div>
           </AlertDescription>
         </Alert>
-      </div>
-    </Section>
+      </Section>
+    </PageContent>
   );
 }
