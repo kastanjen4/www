@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, Building2 } from "lucide-react";
+import { Menu, Building2, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -12,6 +12,7 @@ import {
   SheetHeader,
   SheetFooter,
   SheetTitle,
+  SheetClose,
 } from "@/components/ui/sheet";
 import { navLinks } from "@/components/ui/nav-links";
 
@@ -37,7 +38,7 @@ export function MobileNav() {
       </SheetTrigger>
       <SheetContent
         side="right"
-        className="p-0 w-80 max-w-[85vw] flex flex-col h-full"
+        className="p-0 w-80 max-w-[85vw] flex flex-col h-full [&>button]:hidden"
       >
         <SheetHeader className="flex flex-row items-center justify-between border-b p-6">
           <div className="flex items-center gap-2">
@@ -46,6 +47,16 @@ export function MobileNav() {
             </div>
             <SheetTitle className="font-bold">Kastanjen 4</SheetTitle>
           </div>
+          <SheetClose asChild>
+            <Button
+              variant="ghost"
+              size="sm"
+              aria-label="Close menu"
+              className="relative z-50"
+            >
+              <X className="h-5 w-5" />
+            </Button>
+          </SheetClose>
         </SheetHeader>
         <nav className="flex-1 p-6">
           <div className="space-y-2">
