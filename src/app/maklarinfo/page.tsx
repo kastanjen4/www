@@ -25,8 +25,23 @@ export const metadata: Metadata = {
 };
 
 export default function Maklarinfo() {
+  const annualReports = [
+    {
+      title: "Årsredovisning 2024",
+      href: "/Brf-Kastanjen-4-Arsredovisning-2024.pdf",
+    },
+    {
+      title: "Årsredovisning 2023",
+      href: "/Arsredovisning-2023-inkl-revisionsberattelse-2023.pdf",
+    },
+    {
+      title: "Årsredovisning 2022",
+      href: "/Arsredovisning-2022.pdf",
+    },
+  ];
+
   return (
-    <Section className="prose">
+    <Section className="prose dark:prose-invert">
       <h1>Samlad info till mäklare & intressenter</h1>
 
       <h2>Årsredovisningar</h2>
@@ -34,41 +49,15 @@ export default function Maklarinfo() {
         Ladda ner våra senaste årsredovisningar för detaljerad information om
         föreningens ekonomi och verksamhet.
       </p>
-      <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-3 not-prose mb-8">
-        <a
-          href="/Brf-Kastanjen-4-Arsredovisning-2024.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors"
-        >
-          <div className="font-semibold text-sm">Årsredovisning 2024</div>
-          <div className="text-xs text-muted-foreground mt-1">
-            Senaste årsredovisningen (PDF)
-          </div>
-        </a>
-        <a
-          href="/Arsredovisning-2023-inkl-revisionsberattelse-2023.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors"
-        >
-          <div className="font-semibold text-sm">Årsredovisning 2023</div>
-          <div className="text-xs text-muted-foreground mt-1">
-            Inkl. revisionsberättelse (PDF)
-          </div>
-        </a>
-        <a
-          href="/Arsredovisning-2022.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors"
-        >
-          <div className="font-semibold text-sm">Årsredovisning 2022</div>
-          <div className="text-xs text-muted-foreground mt-1">
-            Årsredovisning (PDF)
-          </div>
-        </a>
-      </div>
+      <ul>
+        {annualReports.map((report, index) => (
+          <li key={index}>
+            <a href={report.href} rel="noopener noreferrer">
+              {report.title}
+            </a>
+          </li>
+        ))}
+      </ul>
       <p className="text-sm text-muted-foreground mb-6">
         Kontakta styrelsen för äldre årsredovisningar.
       </p>
@@ -96,11 +85,7 @@ export default function Maklarinfo() {
       <ul>
         <li>
           Underhållsplan för perioden 2016 – 2035 finns att ladda ner som{" "}
-          <a
-            href="/underhallsplan-2016-2035.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="/underhallsplan-2016-2035.pdf" rel="noopener noreferrer">
             PDF här
           </a>
         </li>
@@ -140,11 +125,7 @@ export default function Maklarinfo() {
       <ul>
         <li>
           Stadgar finns att ladda ner som{" "}
-          <a
-            href="/Stadgar-BRF-Kastanjen-4.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="/Stadgar-BRF-Kastanjen-4.pdf" rel="noopener noreferrer">
             PDF här
           </a>
         </li>

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 export default function OmKastanjen4() {
   return (
-    <Section className="prose">
+    <Section className="prose dark:prose-invert">
       <h1>Om fastigheten & föreningen</h1>
       <p>Föreningen BRF Kastanjen 4 bildades 2005.</p>
       <p>

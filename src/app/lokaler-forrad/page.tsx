@@ -101,7 +101,7 @@ export default function LokalerForrad() {
 
   return (
     <Section>
-      <div className="prose mb-8">
+      <div className="prose dark:prose-invert mb-8">
         <h1>Förråd och rum att hyra</h1>
         <p>
           Här är listan över lokalerna som går att hyra ihop med en kort
@@ -109,16 +109,16 @@ export default function LokalerForrad() {
         </p>
       </div>
 
-      <div className="flex items-start gap-3 p-4 bg-blue-50 border border-blue-200 rounded-lg mb-6 max-w-3xl">
-        <Mail className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+      <div className="flex items-start gap-3 p-4 bg-muted/50 border border-muted rounded-lg mb-6 max-w-3xl">
+        <Mail className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
         <div>
-          <p className="font-medium text-sm text-blue-900 mb-1">Kontakt</p>
-          <p className="text-sm text-blue-700 mb-0">
+          <p className="font-medium text-sm text-foreground mb-1">Kontakt</p>
+          <p className="text-sm text-muted-foreground mb-0">
             För att få se lokaler eller frågor om lokalerna - skicka ett mail
             till styrelsen på{" "}
             <a
               href="mailto:styrelsen@brfkastanjen4.se"
-              className="font-semibold hover:text-blue-800 transition-colors"
+              className="font-semibold hover:text-primary transition-colors"
             >
               styrelsen@brfkastanjen4.se
             </a>
@@ -128,8 +128,8 @@ export default function LokalerForrad() {
       </div>
 
       <div className="flex items-center align-middle gap-3 mt-12 mb-6">
-        <CheckCircle className="h-6 w-6 text-green-600" />
-        <h2 className="text-green-700">Tillgängliga</h2>
+        <CheckCircle className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+        <h2 className="text-emerald-700 dark:text-emerald-300">Tillgängliga</h2>
       </div>
 
       <div className="grid gap-4 mb-12">
@@ -138,26 +138,26 @@ export default function LokalerForrad() {
           return (
             <div
               key={index}
-              className="flex flex-col sm:flex-row items-start gap-4 p-4 sm:p-6 border border-green-200 bg-green-50/50 rounded-lg hover:bg-green-50 transition-colors"
+              className="flex flex-col sm:flex-row items-start gap-4 p-4 sm:p-6 border border-emerald-200 dark:border-emerald-800 bg-emerald-50/50 dark:bg-emerald-950/20 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/30 transition-colors"
             >
-              <div className="rounded-full bg-green-100 p-2 flex-shrink-0">
-                <IconComponent className="h-5 w-5 text-green-600" />
+              <div className="rounded-full bg-emerald-100 dark:bg-emerald-900 p-2 flex-shrink-0">
+                <IconComponent className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
               </div>
               <div className="flex-1 w-full">
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4 mb-3">
-                  <h3 className="font-semibold text-green-900 text-lg mb-0">
+                  <h3 className="font-semibold text-emerald-900 dark:text-emerald-100 text-lg mb-0">
                     {space.name}
                   </h3>
                   <div className="flex items-center gap-4 sm:flex-col sm:items-end sm:gap-1">
-                    <div className="bg-green-100 px-2 py-1 rounded text-sm font-medium text-green-700">
+                    <div className="bg-emerald-100 dark:bg-emerald-900 px-2 py-1 rounded text-sm font-medium text-emerald-700 dark:text-emerald-300">
                       {space.size}
                     </div>
-                    <div className="text-xl font-bold text-green-800">
+                    <div className="text-xl font-bold text-emerald-800 dark:text-emerald-200">
                       {space.price}
                     </div>
                   </div>
                 </div>
-                <p className="text-sm text-green-700 leading-relaxed mb-0">
+                <p className="text-sm text-emerald-700 dark:text-emerald-300 leading-relaxed mb-0">
                   {space.description}
                 </p>
               </div>
@@ -167,8 +167,8 @@ export default function LokalerForrad() {
       </div>
 
       <div className="flex items-center gap-3 mt-16 mb-6">
-        <XCircle className="h-6 w-6 text-red-600" />
-        <h2 className="mb-0 text-red-700">Uthyrda</h2>
+        <XCircle className="h-6 w-6 text-red-600 dark:text-red-400" />
+        <h2 className="mb-0 text-red-700 dark:text-red-300">Uthyrda</h2>
       </div>
 
       <div className="grid gap-4">
@@ -177,26 +177,26 @@ export default function LokalerForrad() {
           return (
             <div
               key={index}
-              className="flex flex-col sm:flex-row items-start gap-4 p-4 sm:p-6 border border-red-200 bg-red-50/50 rounded-lg opacity-75"
+              className="flex flex-col sm:flex-row items-start gap-4 p-4 sm:p-6 border border-red-200 dark:border-red-800 bg-red-50/50 dark:bg-red-950/20 rounded-lg opacity-75"
             >
-              <div className="rounded-full bg-red-100 p-2 flex-shrink-0">
-                <IconComponent className="h-5 w-5 text-red-600" />
+              <div className="rounded-full bg-red-100 dark:bg-red-900 p-2 flex-shrink-0">
+                <IconComponent className="h-5 w-5 text-red-600 dark:text-red-400" />
               </div>
               <div className="flex-1 w-full">
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4 mb-3">
-                  <h3 className="font-semibold text-red-900 text-lg mb-0">
+                  <h3 className="font-semibold text-red-900 dark:text-red-100 text-lg mb-0">
                     {space.name}
                   </h3>
                   <div className="flex items-center gap-4 sm:flex-col sm:items-end sm:gap-1">
-                    <div className="bg-red-100 px-2 py-1 rounded text-sm font-medium text-red-700">
+                    <div className="bg-red-100 dark:bg-red-900 px-2 py-1 rounded text-sm font-medium text-red-700 dark:text-red-300">
                       {space.size}
                     </div>
-                    <div className="text-xl font-bold text-red-800">
+                    <div className="text-xl font-bold text-red-800 dark:text-red-200">
                       {space.price}
                     </div>
                   </div>
                 </div>
-                <p className="text-sm text-red-700 leading-relaxed mb-0">
+                <p className="text-sm text-red-700 dark:text-red-300 leading-relaxed mb-0">
                   {space.description}
                 </p>
               </div>

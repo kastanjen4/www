@@ -40,7 +40,7 @@ export default function Styrelsen() {
 
   return (
     <Section>
-      <div className="prose mb-8">
+      <div className="prose dark:prose-invert mb-8">
         <h1>Styrelsen</h1>
         <p>
           Vill ni få ett ansikte på oss så är de flesta med i vår facebook-grupp{" "}
@@ -51,7 +51,7 @@ export default function Styrelsen() {
       </div>
 
       <h2 className="flex items-center gap-2 text-lg font-semibold mb-4">
-        <Crown className="h-5 w-5 text-amber-600" />
+        <Crown className="h-5 w-5 text-amber-600 dark:text-amber-400" />
         Styrelseledamöter
       </h2>
 
@@ -61,20 +61,24 @@ export default function Styrelsen() {
           return (
             <div
               key={index}
-              className="flex items-center gap-3 p-3 border rounded-lg bg-amber-50/50 border-amber-200"
+              className="flex items-center gap-3 p-3 border rounded-lg bg-amber-50/50 dark:bg-amber-950/20 border-amber-200 dark:border-amber-800"
             >
-              <div className="rounded-full bg-amber-100 p-2">
+              <div className="rounded-full bg-amber-100 dark:bg-amber-900 p-2">
                 <IconComponent
                   className={`h-4 w-4 ${
                     member.role === "Ordföranden"
-                      ? "text-amber-600"
-                      : "text-amber-500"
+                      ? "text-amber-600 dark:text-amber-400"
+                      : "text-amber-500 dark:text-amber-400"
                   }`}
                 />
               </div>
               <div>
-                <p className="font-medium text-amber-900">{member.name}</p>
-                <p className="text-sm text-amber-700">{member.role}</p>
+                <p className="font-medium text-amber-900 dark:text-amber-100">
+                  {member.name}
+                </p>
+                <p className="text-sm text-amber-700 dark:text-amber-300">
+                  {member.role}
+                </p>
               </div>
             </div>
           );
@@ -82,7 +86,7 @@ export default function Styrelsen() {
       </div>
 
       <h2 className="flex items-center gap-2 text-lg font-semibold mb-4">
-        <User className="h-5 w-5 text-blue-600" />
+        <User className="h-5 w-5 text-blue-600 dark:text-blue-400" />
         Suppleanter
       </h2>
 
@@ -92,27 +96,31 @@ export default function Styrelsen() {
           return (
             <div
               key={index}
-              className="flex items-center gap-3 p-3 border rounded-lg bg-blue-50/50 border-blue-200"
+              className="flex items-center gap-3 p-3 border rounded-lg bg-blue-50/50 dark:bg-blue-950/20 border-blue-200 dark:border-blue-800"
             >
-              <div className="rounded-full bg-blue-100 p-2">
-                <IconComponent className="h-4 w-4 text-blue-600" />
+              <div className="rounded-full bg-blue-100 dark:bg-blue-900 p-2">
+                <IconComponent className="h-4 w-4 text-blue-600 dark:text-blue-400" />
               </div>
               <div>
-                <p className="font-medium text-blue-900">{member.name}</p>
-                <p className="text-sm text-blue-700">{member.role}</p>
+                <p className="font-medium text-blue-900 dark:text-blue-100">
+                  {member.name}
+                </p>
+                <p className="text-sm text-blue-700 dark:text-blue-300">
+                  {member.role}
+                </p>
               </div>
             </div>
           );
         })}
       </div>
 
-      <div className="flex items-start gap-3 p-4 bg-green-50 border border-green-200 rounded-lg not-prose mb-6">
-        <Mail className="h-5 w-5 text-green-600 mt-0.5" />
+      <div className="flex items-start gap-3 p-4 bg-muted/50 border border-muted rounded-lg not-prose mb-6">
+        <Mail className="h-5 w-5 text-primary mt-0.5" />
         <div>
-          <p className="font-medium text-sm text-green-900">
+          <p className="font-medium text-sm text-foreground">
             Intresserad av att gå med i styrelsen?
           </p>
-          <p className="text-sm text-green-700">
+          <p className="text-sm text-muted-foreground">
             Hör av dig på mailen så berättar vi mer!
           </p>
         </div>
