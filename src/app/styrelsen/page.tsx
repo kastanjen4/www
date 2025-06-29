@@ -51,7 +51,7 @@ export default function Styrelsen() {
       </div>
 
       <h2 className="flex items-center gap-2 text-lg font-semibold mb-4">
-        <Crown className="h-5 w-5 text-amber-600 dark:text-amber-400" />
+        <Crown className="h-5 w-5 text-primary dark:text-orange-300" />
         Styrelseledamöter
       </h2>
 
@@ -61,22 +61,22 @@ export default function Styrelsen() {
           return (
             <div
               key={index}
-              className="flex items-center gap-3 p-3 border rounded-lg bg-amber-50/50 dark:bg-amber-950/20 border-amber-200 dark:border-amber-800"
+              className="flex items-center gap-3 p-3 border rounded-lg bg-primary/5 dark:bg-primary/10 border-primary/20 dark:border-primary/30"
             >
-              <div className="rounded-full bg-amber-100 dark:bg-amber-900 p-2">
+              <div className="rounded-full bg-primary/10 dark:bg-primary/20 p-2">
                 <IconComponent
                   className={`h-4 w-4 ${
                     member.role === "Ordföranden"
-                      ? "text-amber-600 dark:text-amber-400"
-                      : "text-amber-500 dark:text-amber-400"
+                      ? "text-primary dark:text-orange-300"
+                      : "text-primary/80 dark:text-orange-200"
                   }`}
                 />
               </div>
               <div>
-                <p className="font-medium text-amber-900 dark:text-amber-100">
+                <p className="font-medium text-primary dark:text-orange-100">
                   {member.name}
                 </p>
-                <p className="text-sm text-amber-700 dark:text-amber-300">
+                <p className="text-sm text-primary/70 dark:text-orange-200/80">
                   {member.role}
                 </p>
               </div>
@@ -86,7 +86,7 @@ export default function Styrelsen() {
       </div>
 
       <h2 className="flex items-center gap-2 text-lg font-semibold mb-4">
-        <User className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+        <User className="h-5 w-5 text-primary dark:text-orange-300" />
         Suppleanter
       </h2>
 
@@ -96,16 +96,16 @@ export default function Styrelsen() {
           return (
             <div
               key={index}
-              className="flex items-center gap-3 p-3 border rounded-lg bg-blue-50/50 dark:bg-blue-950/20 border-blue-200 dark:border-blue-800"
+              className="flex items-center gap-3 p-3 border rounded-lg bg-primary/5 dark:bg-primary/10 border-primary/20 dark:border-primary/30"
             >
-              <div className="rounded-full bg-blue-100 dark:bg-blue-900 p-2">
-                <IconComponent className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+              <div className="rounded-full bg-primary/10 dark:bg-primary/20 p-2">
+                <IconComponent className="h-4 w-4 text-primary/80 dark:text-orange-200" />
               </div>
               <div>
-                <p className="font-medium text-blue-900 dark:text-blue-100">
+                <p className="font-medium text-primary dark:text-orange-100">
                   {member.name}
                 </p>
-                <p className="text-sm text-blue-700 dark:text-blue-300">
+                <p className="text-sm text-primary/70 dark:text-orange-200/80">
                   {member.role}
                 </p>
               </div>
