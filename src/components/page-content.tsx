@@ -11,10 +11,10 @@ import { cn } from "@/lib/utils";
 export function PageContent({
   children,
   className,
-  spacing = "space-y-6",
+  spacing = "space-y-8",
   ...props
 }: React.ComponentProps<"div"> & {
-  spacing?: string;
+  spacing?: `space-y-${number}`;
 }) {
   return (
     <div className={cn("w-full py-12", spacing, className)} {...props}>
