@@ -8,11 +8,13 @@ import {
 } from "@/components/ui/navigation-menu";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ModeToggle } from "@/components/ui/mode-toggle";
+import { JsonLd } from "@/components/json-ld";
 import { Mail, MapPin } from "lucide-react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+import type { Organization, WithContext } from "schema-dts";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -68,71 +70,59 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Organization JSON-LD structured data
+  const organizationSchema: WithContext<Organization> = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "BRF Kastanjen 4",
+    alternateName: "Bostadsrättsföreningen Kastanjen 4",
+    description:
+      "Lugnets oas i stadens puls. En trivsam bostadsrättsförening i hjärtat av Malmö.",
+    url: "https://brfkastanjen4.se",
+    logo: "https://brfkastanjen4.se/logo.png",
+    email: "styrelsen@brfkastanjen4.se",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Almbacksgatan 16",
+      addressLocality: "Malmö",
+      addressRegion: "Skåne",
+      postalCode: "211 54",
+      addressCountry: "SE",
+    },
+    areaServed: {
+      "@type": "Place",
+      name: "Malmö, Sverige",
+    },
+    foundingDate: "1996",
+    identifier: {
+      "@type": "PropertyValue",
+      name: "Organisationsnummer",
+      value: "769612-2675",
+    },
+    parentOrganization: {
+      "@type": "Organization",
+      name: "HSB Malmö",
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Uthyrning av lokaler och förråd",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Förrådsuthyrning",
+            description: "Uthyrning av förråd och lokaler till allmänheten",
+          },
+        },
+      ],
+    },
+  };
+
   return (
     <html lang="sv" suppressHydrationWarning>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "BRF Kastanjen 4",
-              alternateName: "Bostadsrättsföreningen Kastanjen 4",
-              description:
-                "Lugnets oas i stadens puls. En trivsam bostadsrättsförening i hjärtat av Malmö.",
-              url: "https://brfkastanjen4.se",
-              logo: "https://brfkastanjen4.se/logo.png",
-              email: "styrelsen@brfkastanjen4.se",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "Almbacksgatan 16",
-                addressLocality: "Malmö",
-                addressRegion: "Skåne",
-                postalCode: "214 22",
-                addressCountry: "SE",
-              },
-              areaServed: {
-                "@type": "Place",
-                name: "Malmö, Sverige",
-              },
-              foundingDate: "1996",
-              organizationType: "Bostadsrättsförening",
-              identifier: {
-                "@type": "PropertyValue",
-                name: "Organisationsnummer",
-                value: "769612-2675",
-              },
-              parentOrganization: {
-                "@type": "Organization",
-                name: "HSB Malmö",
-              },
-              serviceType: "Bostadsrättsförening",
-              hasOfferCatalog: {
-                "@type": "OfferCatalog",
-                name: "Uthyrning av lokaler och förråd",
-                itemListElement: [
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "Festvåning",
-                      description: "Uthyrning av gemensam festvåning",
-                    },
-                  },
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "Förrådsuthyrning",
-                      description: "Uthyrning av förråd till medlemmar",
-                    },
-                  },
-                ],
-              },
-            }),
-          }}
-        />
+        <JsonLd schema={organizationSchema} />
       </head>
       <body
         className={`font-sans ${inter.variable} antialiased bg-gradient-to-br from-background via-secondary to-muted min-h-screen w-full`}

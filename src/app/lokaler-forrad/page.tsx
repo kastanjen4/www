@@ -1,7 +1,6 @@
 import Section from "@/components/section";
 import { Car, CheckCircle, Home, Mail, Package, XCircle } from "lucide-react";
 import type { Metadata } from "next";
-import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Förråd och lokaler att hyra - BRF Kastanjen 4",
@@ -124,80 +123,10 @@ export default function LokalerForrad() {
   const availableSpaces = spaces.filter((space) => space.available);
   const rentedSpaces = spaces.filter((space) => !space.available);
 
-  // Generate JSON-LD structured data for rental spaces
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Service",
-        "@id": "https://brfkastanjen4.se/lokaler-forrad#service",
-        name: "Förråd och lokaler att hyra",
-        description:
-          "Hyra extra förråd och lokaler från 120 kr/mån. MC-parkering, källarlokaler och förråd i olika storlekar.",
-        provider: {
-          "@type": "Organization",
-          name: "BRF Kastanjen 4",
-          url: "https://brfkastanjen4.se",
-        },
-        serviceType: "Storage and Commercial Space Rental",
-        areaServed: {
-          "@type": "City",
-          name: "Malmö",
-        },
-        url: "https://brfkastanjen4.se/lokaler-forrad",
-      },
-      ...availableSpaces.map((space, index) => ({
-        "@type": "Product",
-        "@id": `https://brfkastanjen4.se/lokaler-forrad#space-${index}`,
-        name: space.name,
-        description: space.description,
-        category: space.category,
-        size: space.size,
-        offers: {
-          "@type": "Offer",
-          price: space.priceValue,
-          priceCurrency: "SEK",
-          priceSpecification: {
-            "@type": "UnitPriceSpecification",
-            price: space.priceValue,
-            priceCurrency: "SEK",
-            unitCode: "MON",
-            unitText: "per månad",
-          },
-          availability: "https://schema.org/InStock",
-          seller: {
-            "@type": "Organization",
-            name: "BRF Kastanjen 4",
-          },
-          businessFunction: "https://schema.org/LeaseOut",
-          availabilityStarts: new Date().toISOString().split("T")[0],
-        },
-        provider: {
-          "@type": "Organization",
-          name: "BRF Kastanjen 4",
-        },
-        location: {
-          "@type": "Place",
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: "Almbacksgatan 16",
-            addressLocality: "Malmö",
-            addressCountry: "SE",
-          },
-        },
-      })),
-    ],
-  };
+  // Generate comprehensive JSON-LD structured data for rental service and all spaces
 
   return (
     <>
-      <Script
-        id="rental-spaces-jsonld"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd),
-        }}
-      />
       <Section>
         <article>
           <header className="prose dark:prose-invert mb-8">
