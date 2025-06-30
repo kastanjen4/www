@@ -29,7 +29,7 @@ export function ImageGallery({ items, className = "" }: ImageGalleryProps) {
         return (
           <HoverCard key={image.alt}>
             <HoverCardTrigger asChild>
-              <Card className="group relative aspect-[4/3] overflow-hidden cursor-pointer border-0 shadow-md hover:shadow-xl transition-all duration-300 w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <Card className="group relative aspect-[4/3] overflow-hidden border-0 shadow-md hover:shadow-xl transition-all duration-300 w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
                 <Image
                   src={image.src}
                   alt={image.alt}

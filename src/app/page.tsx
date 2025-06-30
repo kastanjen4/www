@@ -406,7 +406,7 @@ export default function Home() {
                   <CarouselItem key={image.alt} className="pl-2 md:pl-4">
                     <HoverCard>
                       <HoverCardTrigger asChild>
-                        <Card className="group relative aspect-[4/3] overflow-hidden cursor-pointer border-0 shadow-md hover:shadow-xl transition-all duration-300">
+                        <Card className="group relative aspect-[4/3] overflow-hidden border-0 shadow-md hover:shadow-xl transition-all duration-300">
                           <Image
                             src={image.src}
                             alt={image.alt}
