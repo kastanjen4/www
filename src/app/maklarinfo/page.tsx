@@ -142,7 +142,7 @@ export default function Maklarinfo() {
           </li>
           <li>
             Gemensamma utrymmen: en mysig innergård, bastu med plats för upp
-            till 12 personer, cykelrum, modern tvättstuga med torkrum och
+            till 12 personer, cykelrum, välutrustad tvättstuga med torkrum och
             källsorteringsrum.
           </li>
         </ul>
