@@ -1,9 +1,17 @@
+import { ImageGallery } from "@/components/image-gallery";
 import { PageContent } from "@/components/page-content";
 import Section from "@/components/section";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import {
   HoverCard,
   HoverCardContent,
@@ -31,6 +39,7 @@ import Link from "next/link";
 
 // Static image imports for blur placeholders
 import balkongvy from "/public/balkongvy.jpg";
+import bastu from "/public/bastu.jpg";
 import folketspark from "/public/folketspark.jpg";
 import innergarden from "/public/innergarden.jpg";
 import kastanjetrad from "/public/kastanjetrad.jpg";
@@ -62,144 +71,84 @@ export const metadata: Metadata = {
   },
 };
 
+const features = [
+  {
+    icon: Car,
+    title: "Parkeringsmöjligheter",
+    description:
+      "Extra förråd, MC-parkering och olika lokalstorlekar tillgängliga",
+    highlight: "Tillval",
+    color: "bg-green-500",
+  },
+  {
+    icon: Zap,
+    title: "Moderna faciliteter",
+    description:
+      "Bastu, tvättstuga, cykelrum och nyrenoverade gemensamma utrymmen",
+    highlight: "Inkluderat",
+    color: "bg-purple-500",
+  },
+  {
+    icon: Shield,
+    title: "Trygg miljö",
+    description: "Lugn gata med stark grannsämja och säker miljö för familjer",
+    highlight: "Säkert",
+    color: "bg-amber-500",
+  },
+];
+
+const highlights = [
+  {
+    text: "Perfekt läge mellan Folkets Park och S:t Knuts torg",
+    icon: MapPin,
+  },
+  {
+    text: "5-10 minuters promenad till Triangeln station",
+    icon: Clock,
+  },
+  {
+    text: "Bastu, tvättstuga, cykelrum och innegård med lekplats",
+    icon: CheckCircle,
+  },
+  {
+    text: "Aktiv och engagerad styrelse",
+    icon: Users,
+  },
+];
+
+const locationBenefits = [
+  {
+    name: "Folkets Park",
+    distance: "2 min gång",
+    icon: TreePine,
+    color: "text-green-600",
+    description: "Malmös populäraste park med evenemang året runt",
+  },
+  {
+    name: "S:t Knuts torg",
+    distance: "1 min gång",
+    icon: MapPin,
+    color: "text-blue-600",
+    description: "Mysigt torg med caféer och lokala butiker",
+  },
+  {
+    name: "Triangeln",
+    distance: "5-10 min gång",
+    icon: MapPin,
+    color: "text-purple-600",
+    description:
+      "Köpcentrum och tågstation med direktförbindelse till Köpenhamn",
+  },
+  {
+    name: "Möllevångstorget",
+    distance: "8 min gång",
+    icon: MapPin,
+    color: "text-orange-600",
+    description: "Livlig mångkulturell knutpunkt med restauranger",
+  },
+];
+
 export default function Home() {
-  const images = [
-    {
-      src: folketspark,
-      alt: "Folkets park",
-      icon: TreePine,
-      category: "Närområdet",
-      description: "Malmös gröna hjärta med parker och aktiviteter",
-    },
-    {
-      src: stknutstorg,
-      alt: "S:t Knuts torg",
-      icon: MapPin,
-      category: "Närområdet",
-      description: "Charmigt torg med caféer och butiker",
-    },
-    {
-      src: balkongvy,
-      alt: "Balkongvy över gården",
-      icon: TreePine,
-      category: "Fastigheten",
-      description: "Lugn och grön innergård",
-    },
-    {
-      src: innergarden,
-      alt: "Innergården",
-      icon: TreePine,
-      category: "Fastigheten",
-      description: "Gemensam mötesplats för alla boende",
-    },
-    {
-      src: lekplats,
-      alt: "Lekplats på innergården",
-      icon: TreePine,
-      category: "Fastigheten",
-      description: "Säker lekplats för barn",
-    },
-    {
-      src: partytaket,
-      alt: "Party-taket",
-      icon: TreePine,
-      category: "Fastigheten",
-      description: "Taketerrass för gemensamma aktiviteter",
-    },
-    {
-      src: triangeln,
-      alt: "Triangeln köpcentrum",
-      icon: MapPin,
-      category: "Närområdet",
-      description: "Shopping och kollektivtrafik",
-    },
-    {
-      src: mollevangstorget,
-      alt: "Möllevångstorget",
-      icon: MapPin,
-      category: "Närområdet",
-      description: "Mångkulturellt centrum med restauranger",
-    },
-  ];
-
-  const features = [
-    {
-      icon: Car,
-      title: "Parkeringsmöjligheter",
-      description:
-        "Extra förråd, MC-parkering och olika lokalstorlekar tillgängliga",
-      highlight: "Tillval",
-      color: "bg-green-500",
-    },
-    {
-      icon: Zap,
-      title: "Moderna faciliteter",
-      description:
-        "Bastu, tvättstuga, cykelrum och nyrenoverade gemensamma utrymmen",
-      highlight: "Inkluderat",
-      color: "bg-purple-500",
-    },
-    {
-      icon: Shield,
-      title: "Trygg miljö",
-      description:
-        "Lugn gata med stark grannsämja och säker miljö för familjer",
-      highlight: "Säkert",
-      color: "bg-amber-500",
-    },
-  ];
-
-  const highlights = [
-    {
-      text: "Perfekt läge mellan Folkets Park och S:t Knuts torg",
-      icon: MapPin,
-    },
-    {
-      text: "5-10 minuters promenad till Triangeln station",
-      icon: Clock,
-    },
-    {
-      text: "Bastu, tvättstuga, cykelrum och innegård med lekplats",
-      icon: CheckCircle,
-    },
-    {
-      text: "Aktiv och engagerad styrelse",
-      icon: Users,
-    },
-  ];
-
-  const locationBenefits = [
-    {
-      name: "Folkets Park",
-      distance: "2 min gång",
-      icon: TreePine,
-      color: "text-green-600",
-      description: "Malmös populäraste park med evenemang året runt",
-    },
-    {
-      name: "S:t Knuts torg",
-      distance: "1 min gång",
-      icon: MapPin,
-      color: "text-blue-600",
-      description: "Mysigt torg med caféer och lokala butiker",
-    },
-    {
-      name: "Triangeln",
-      distance: "5-10 min gång",
-      icon: MapPin,
-      color: "text-purple-600",
-      description:
-        "Köpcentrum och tågstation med direktförbindelse till Köpenhamn",
-    },
-    {
-      name: "Möllevångstorget",
-      distance: "8 min gång",
-      icon: MapPin,
-      color: "text-orange-600",
-      description: "Livlig mångkulturell knutpunkt med restauranger",
-    },
-  ];
-
   return (
     <PageContent className="pb-0">
       <Section>
@@ -305,65 +254,58 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Image Gallery Section */}
+      {/* Building Facilities Gallery */}
       <Section>
         <div className="text-center space-y-4">
-          <Badge variant="outline">Upptäck området</Badge>
+          <Badge variant="outline">Fastigheten</Badge>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Perfekt läge i Malmö
+            Våra faciliteter & gemensamma utrymmen
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Nära Folkets Park, S:t Knuts torg och med närhet till både Möllan
-            och centrum.
+            Moderna faciliteter och välskötta gemensamma områden för alla boende
+            att njuta av.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {images.map((image) => {
-            const IconComponent = image.icon;
-            return (
-              <HoverCard key={image.alt}>
-                <HoverCardTrigger asChild>
-                  <Card className="group relative aspect-square overflow-hidden cursor-pointer border-0 shadow-md hover:shadow-xl transition-all duration-300">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
-                      sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                      placeholder="blur"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute inset-0 flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="space-y-2">
-                        <Badge variant="secondary" className="w-fit">
-                          <IconComponent className="h-3 w-3 mr-1" />
-                          {image.category}
-                        </Badge>
-                        <p className="text-foreground text-sm font-semibold leading-tight">
-                          {image.alt}
-                        </p>
-                      </div>
-                    </div>
-                  </Card>
-                </HoverCardTrigger>
-                <HoverCardContent className="w-80">
-                  <div className="flex items-center space-x-3">
-                    <div className="rounded-full bg-primary/10 p-2">
-                      <IconComponent className="h-4 w-4 text-primary" />
-                    </div>
-                    <div className="space-y-1">
-                      <h4 className="font-semibold">{image.alt}</h4>
-                      <p className="text-sm text-muted-foreground">
-                        {image.description}
-                      </p>
-                    </div>
-                  </div>
-                </HoverCardContent>
-              </HoverCard>
-            );
-          })}
-        </div>
+        <ImageGallery
+          items={[
+            {
+              src: innergarden,
+              alt: "Innergården",
+              icon: TreePine,
+              category: "Fastigheten",
+              description: "Gemensam mötesplats för alla boende",
+            },
+            {
+              src: balkongvy,
+              alt: "Balkongvy över gården",
+              icon: TreePine,
+              category: "Fastigheten",
+              description: "Lugn och grön innergård",
+            },
+            {
+              src: lekplats,
+              alt: "Lekplats på innergården",
+              icon: TreePine,
+              category: "Fastigheten",
+              description: "Säker lekplats för barn",
+            },
+            {
+              src: partytaket,
+              alt: "Party-taket",
+              icon: TreePine,
+              category: "Fastigheten",
+              description: "Taketerrass för gemensamma aktiviteter",
+            },
+            {
+              src: bastu,
+              alt: "Bastu",
+              icon: Zap,
+              category: "Fastigheten",
+              description: "Relaxerande bastu för alla boende",
+            },
+          ]}
+        />
       </Section>
 
       {/* Location Benefits Section */}
@@ -419,23 +361,93 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-3xl blur-3xl" />
-            <Card className="relative overflow-hidden border-0 shadow-2xl aspect-[4/3]">
-              <Image
-                src={folketspark}
-                alt="Folkets Park"
-                placeholder="blur"
-                quality={100}
-                fill
-                sizes="100vw"
-                style={{
-                  objectFit: "cover",
-                }}
-                className="w-full"
-              />
-            </Card>
-          </div>
+          <Carousel
+            opts={{
+              align: "center",
+              loop: true,
+            }}
+            className="w-full max-w-5xl mx-auto"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {[
+                {
+                  src: folketspark,
+                  alt: "Folkets park",
+                  icon: TreePine,
+                  category: "Närområdet",
+                  description: "Malmös gröna hjärta med parker och aktiviteter",
+                },
+                {
+                  src: stknutstorg,
+                  alt: "S:t Knuts torg",
+                  icon: MapPin,
+                  category: "Närområdet",
+                  description: "Charmigt torg med caféer och butiker",
+                },
+                {
+                  src: triangeln,
+                  alt: "Triangeln köpcentrum",
+                  icon: MapPin,
+                  category: "Närområdet",
+                  description: "Shopping och kollektivtrafik",
+                },
+                {
+                  src: mollevangstorget,
+                  alt: "Möllevångstorget",
+                  icon: MapPin,
+                  category: "Närområdet",
+                  description: "Mångkulturellt centrum med restauranger",
+                },
+              ].map((image) => {
+                const IconComponent = image.icon;
+                return (
+                  <CarouselItem key={image.alt} className="pl-2 md:pl-4">
+                    <HoverCard>
+                      <HoverCardTrigger asChild>
+                        <Card className="group relative aspect-[4/3] overflow-hidden cursor-pointer border-0 shadow-md hover:shadow-xl transition-all duration-300">
+                          <Image
+                            src={image.src}
+                            alt={image.alt}
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover:scale-110"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            placeholder="blur"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                          <div className="absolute inset-0 flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div className="space-y-2">
+                              <Badge variant="secondary" className="w-fit">
+                                <IconComponent className="h-3 w-3 mr-1" />
+                                {image.category}
+                              </Badge>
+                              <p className="text-foreground text-sm font-semibold leading-tight">
+                                {image.alt}
+                              </p>
+                            </div>
+                          </div>
+                        </Card>
+                      </HoverCardTrigger>
+                      <HoverCardContent className="w-80">
+                        <div className="flex items-center space-x-3">
+                          <div className="rounded-full bg-primary/10 p-2">
+                            <IconComponent className="h-4 w-4 text-primary" />
+                          </div>
+                          <div className="space-y-1">
+                            <h4 className="font-semibold">{image.alt}</h4>
+                            <p className="text-sm text-muted-foreground">
+                              {image.description}
+                            </p>
+                          </div>
+                        </div>
+                      </HoverCardContent>
+                    </HoverCard>
+                  </CarouselItem>
+                );
+              })}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
       </Section>
 
