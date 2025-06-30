@@ -61,6 +61,8 @@ export const metadata: Metadata = {
     "Folkets Park",
     "Triangeln",
     "bostadsrätt",
+    "bastu",
+    "brf",
   ],
   openGraph: {
     title: "BRF Kastanjen 4 - Lugnets oas i stadens puls",
