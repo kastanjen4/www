@@ -82,7 +82,7 @@ const features = [
   },
   {
     icon: Zap,
-    title: "Moderna faciliteter",
+    title: "Välskötta faciliteter",
     description:
       "Bastu, tvättstuga, cykelrum och nyrenoverade gemensamma utrymmen",
     highlight: "Inkluderat",
@@ -226,7 +226,7 @@ export default function Home() {
             Fantastiska faciliteter
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Föreningen erbjuder moderna gemensamma faciliteter och sätter
+            Föreningen erbjuder välskötta gemensamma faciliteter och sätter
             trivsel som högsta prioritet.
           </p>
         </div>
@@ -262,8 +262,8 @@ export default function Home() {
             Våra faciliteter & gemensamma utrymmen
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Moderna faciliteter och välskötta gemensamma områden för alla boende
-            att njuta av.
+            Välskötta faciliteter och gemensamma områden för alla boende att
+            njuta av.
           </p>
         </div>
 
@@ -302,7 +302,7 @@ export default function Home() {
               alt: "Bastu",
               icon: Zap,
               category: "Fastigheten",
-              description: "Relaxerande bastu för alla boende",
+              description: "Stor bastu med plats för upp till 12 personer",
             },
           ]}
         />

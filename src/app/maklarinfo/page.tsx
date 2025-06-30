@@ -141,8 +141,9 @@ export default function Maklarinfo() {
             Av de 17 lägenheterna är 15 st 3:or på 87 m² och två 2:or på 70 m².
           </li>
           <li>
-            Gemensamma utrymmen: en mysig innergård, bastu, cykelrum, modern
-            tvättstuga med torkrum och källsorteringsrum.
+            Gemensamma utrymmen: en mysig innergård, bastu med plats för upp
+            till 12 personer, cykelrum, modern tvättstuga med torkrum och
+            källsorteringsrum.
           </li>
         </ul>
       </Section>

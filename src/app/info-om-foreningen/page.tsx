@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Om föreningen - BRF Kastanjen 4",
     description:
-      "Lär dig mer om vår bostadsrättsförening med 17 lägenheter och moderna faciliteter i centrala Malmö.",
+      "Lär dig mer om vår bostadsrättsförening med 17 lägenheter och välskötta faciliteter i centrala Malmö.",
     type: "website",
     locale: "sv_SE",
   },
@@ -38,11 +38,12 @@ export default function OmKastanjen4() {
         </p>
         <p>
           På bottenvåningen finns ett cykelrum som har en utgång mot gatan, en
-          tvättstuga som rustats upp med nya maskiner 2023, en bastu några meter
-          från hissen/trappan och en välskött innergård med en liten lekplats
-          för de små. Det finns även ett &ldquo;party-tak&rdquo; med en av två
-          uppsättningar utemöbler. Den andra uppsättningen är under bar himmel
-          så att man kan grilla på både regniga och soliga sommardagar!
+          tvättstuga som rustats upp med nya maskiner 2023, en bastu med plats
+          för upp till 12 personer några meter från hissen/trappan och en
+          välskött innergård med en liten lekplats för de små. Det finns även
+          ett &ldquo;party-tak&rdquo; med en av två uppsättningar utemöbler. Den
+          andra uppsättningen är under bar himmel så att man kan grilla på både
+          regniga och soliga sommardagar!
         </p>
         <p>
           Utöver bostadsrätterna så finns det även diverse utrymmen, förråd och
