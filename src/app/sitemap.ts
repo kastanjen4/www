@@ -39,7 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   >;
 
   return routes.map(({ path, ...rest }) => ({
-    url: `${baseUrl}/${path}`,
+    url: `${baseUrl}${path}`,
     ...rest,
   }));
 }
