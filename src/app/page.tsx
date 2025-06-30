@@ -105,7 +105,7 @@ const highlights = [
     icon: MapPin,
   },
   {
-    text: "5-10 minuters promenad till Triangeln station",
+    text: "5-10 minuters promenad till Triangeln",
     icon: Clock,
   },
   {
