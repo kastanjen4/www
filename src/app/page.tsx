@@ -86,7 +86,7 @@ const features = [
     icon: Zap,
     title: "Välskötta faciliteter",
     description:
-      "Bastu, tvättstuga, cykelrum och nyrenoverade gemensamma utrymmen",
+      "Bastu, tvättstuga, cykelrum och välskötta gemensamma utrymmen",
     highlight: "Inkluderat",
     color: "bg-purple-500",
   },
@@ -105,7 +105,7 @@ const highlights = [
     icon: MapPin,
   },
   {
-    text: "5-10 minuters promenad till Triangeln station",
+    text: "5-10 minuters promenad till Triangeln",
     icon: Clock,
   },
   {
