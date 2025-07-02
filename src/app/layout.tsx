@@ -17,6 +17,7 @@ import Link from "next/link";
 import logo from "/public/logo.png";
 import type { Organization, WithContext } from "schema-dts";
 import "./globals.css";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -243,6 +244,7 @@ export default function RootLayout({
             </div>
           )}
         </ThemeProvider>
+        <GoogleAnalytics gaId="G-L0K6H6T2GY" />
       </body>
     </html>
   );
