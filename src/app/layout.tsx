@@ -175,9 +175,15 @@ export default function RootLayout({
                     </NavigationMenuList>
                   </NavigationMenu>
                   {/* Mobile Navigation */}
-                  <div className="md:hidden">
+                  <div className="md:hidden flex items-center gap-2">
+                    <ModeToggle />
                     <MobileNav />
                   </div>
+                </div>
+
+                {/* Desktop Theme Toggle */}
+                <div className="hidden md:flex">
+                  <ModeToggle />
                 </div>
               </div>
             </header>
@@ -237,12 +243,6 @@ export default function RootLayout({
               </div>
             </footer>
           </div>
-          {/* Development Mode Toggle - Fixed Position */}
-          {process.env.NODE_ENV === "development" && (
-            <div className="fixed bottom-4 right-4 z-[9999]">
-              <ModeToggle />
-            </div>
-          )}
         </ThemeProvider>
         <GoogleAnalytics gaId="G-L0K6H6T2GY" />
       </body>

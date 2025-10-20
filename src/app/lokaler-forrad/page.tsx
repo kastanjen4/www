@@ -36,108 +36,120 @@ export const metadata: Metadata = {
   },
 };
 
+interface Space {
+  name: string;
+  size: string;
+  price: string;
+  priceValue: number;
+  description: string;
+  icon: React.ElementType;
+  available: boolean;
+  category: "StorageUnit" | "ParkingSpace" | "CommercialSpace";
+  categoryName: "Förråd" | "Parkering" | "Lokaler";
+}
+
+const spaces = [
+  {
+    name: "Miniförrådet på vinden",
+    size: "2 m²",
+    price: "120 kr/mån",
+    priceValue: 120,
+    description: "Litet förråd på vinden.",
+    icon: Package,
+    available: true,
+    category: "StorageUnit",
+    categoryName: "Förråd",
+  },
+  {
+    name: "MC-Parkering",
+    size: "4 m²",
+    price: "325 kr/mån",
+    priceValue: 325,
+    description: "Egen parkering för motorcykel.",
+    icon: Car,
+    available: true,
+    category: "ParkingSpace",
+    categoryName: "Parkering",
+  },
+  {
+    name: "Lilla förrådet i källaren",
+    size: "4 m²",
+    price: "400 kr/mån",
+    priceValue: 400,
+    description: "Litet källarförråd med tillgång till el.",
+    icon: Package,
+    available: false,
+    category: "StorageUnit",
+    categoryName: "Förråd",
+  },
+  {
+    name: "Förrådet på 7:e",
+    size: "6 m²",
+    price: "440 kr/mån",
+    priceValue: 440,
+    description: "Förråd högst upp med tillgång till el.",
+    icon: Package,
+    available: true,
+    category: "StorageUnit",
+    categoryName: "Förråd",
+  },
+  {
+    name: "Lokalen med vatten",
+    size: "12 m²",
+    price: "1100 kr/mån",
+    priceValue: 1100,
+    description:
+      "En lokal på entréplan bredvid tvättstugan med egen dusch & en toalett som behöver fixas (diskuteras vid visat intresse). El och ventilation finns också.",
+    icon: Home,
+    available: true,
+    category: "CommercialSpace",
+    categoryName: "Lokaler",
+  },
+  {
+    name: "Stora källarlokalen",
+    size: "34 m²",
+    price: "2800 kr/mån",
+    priceValue: 2800,
+    description:
+      "Den största lokalen med både el och ventilation plus ett mini-rum inuti själva lokalen.",
+    icon: Home,
+    available: true,
+    category: "CommercialSpace",
+    categoryName: "Lokaler",
+  },
+  {
+    name: "Förrådet med fönstret",
+    size: "7 m²",
+    price: "440 kr/mån",
+    priceValue: 440,
+    description:
+      "Förråd på bottenvåningen med ingång från cykelrummet. Fönster mot innergården så dagsljuset lyser in, däremot saknas el-uttag.",
+    icon: Package,
+    available: true,
+    category: "StorageUnit",
+    categoryName: "Förråd",
+  },
+  {
+    name: "Mellanstora lokalen",
+    size: "13 m²",
+    price: "620 kr/mån",
+    priceValue: 620,
+    description: "Källarlokal med el.",
+    icon: Home,
+    available: true,
+    category: "CommercialSpace",
+    categoryName: "Lokaler",
+  },
+] as const satisfies Space[];
+
+// Sort spaces: available first, then rented
+const sortedSpaces = [...spaces].sort((a, b) => {
+  if (a.available && !b.available) return -1;
+  if (!a.available && b.available) return 1;
+  return 0;
+});
+
 export default function LokalerForrad() {
-  const spaces = [
-    {
-      name: "Miniförrådet på vinden",
-      size: "2 m²",
-      price: "120 kr/mån",
-      priceValue: 120,
-      description: "Litet förråd på vinden.",
-      icon: Package,
-      available: true,
-      category: "StorageUnit",
-      categoryName: "Förråd",
-    },
-    {
-      name: "MC-Parkering",
-      size: "4 m²",
-      price: "325 kr/mån",
-      priceValue: 325,
-      description: "Egen parkering för motorcykel.",
-      icon: Car,
-      available: true,
-      category: "ParkingSpace",
-      categoryName: "Parkering",
-    },
-    {
-      name: "Lilla förrådet i källaren",
-      size: "4 m²",
-      price: "400 kr/mån",
-      priceValue: 400,
-      description: "Litet källarförråd med tillgång till el.",
-      icon: Package,
-      available: true,
-      category: "StorageUnit",
-      categoryName: "Förråd",
-    },
-    {
-      name: "Förrådet på 7:e",
-      size: "6 m²",
-      price: "440 kr/mån",
-      priceValue: 440,
-      description: "Förråd högst upp med tillgång till el.",
-      icon: Package,
-      available: true,
-      category: "StorageUnit",
-      categoryName: "Förråd",
-    },
-    {
-      name: "Lokalen med vatten",
-      size: "12 m²",
-      price: "1100 kr/mån",
-      priceValue: 1100,
-      description:
-        "En lokal på entréplan bredvid tvättstugan med egen dusch & en toalett som behöver fixas (diskuteras vid visat intresse). El och ventilation finns också.",
-      icon: Home,
-      available: true,
-      category: "CommercialSpace",
-      categoryName: "Lokaler",
-    },
-    {
-      name: "Stora källarlokalen",
-      size: "34 m²",
-      price: "2800 kr/mån",
-      priceValue: 2800,
-      description:
-        "Den största lokalen med både el och ventilation plus ett mini-rum inuti själva lokalen.",
-      icon: Home,
-      available: true,
-      category: "CommercialSpace",
-      categoryName: "Lokaler",
-    },
-    {
-      name: "Förrådet med fönstret",
-      size: "7 m²",
-      price: "440 kr/mån",
-      priceValue: 440,
-      description:
-        "Förråd på bottenvåningen med ingång från cykelrummet. Fönster mot innergården så dagsljuset lyser in, däremot saknas el-uttag.",
-      icon: Package,
-      available: false,
-      category: "StorageUnit",
-      categoryName: "Förråd",
-    },
-    {
-      name: "Mellanstora lokalen",
-      size: "13 m²",
-      price: "620 kr/mån",
-      priceValue: 620,
-      description: "Källarlokal med el.",
-      icon: Home,
-      available: false,
-      category: "CommercialSpace",
-      categoryName: "Lokaler",
-    },
-  ];
-
-  // Sort spaces: available first, then rented
-  const sortedSpaces = [...spaces].sort((a, b) => {
-    if (a.available && !b.available) return -1;
-    if (!a.available && b.available) return 1;
-    return 0;
-  });
-
   return (
     <PageContent>
       <Section>

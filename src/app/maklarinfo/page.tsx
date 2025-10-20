@@ -67,13 +67,15 @@ export default function Maklarinfo() {
         <h2>Föreningens ekonomi och medlemsavgifter</h2>
         <ul>
           <li>
-            Föreningen äger tomten. Friköp av tomträtt från Malmö kommun gjordes 2021
+            Föreningen äger tomten. Friköp av tomträtt från Malmö kommun gjordes
+            2021
           </li>
-          <li>Föreningen genomförde en avgiftshöjning i maj 2025.
-          </li>
+          <li>Föreningen genomförde en avgiftshöjning i maj 2025.</li>
           <li>
-            En ytterligare justering av avgiften med cirka 9-15 % planeras att genomföras innan år 2026.
-            Bakgrunden till höjningen är behovet av att stärka föreningens ekonomi inför kommande underhåll och investeringar.
+            En ytterligare justering av avgiften med cirka 9-15 % planeras att
+            genomföras innan år 2026. Bakgrunden till höjningen är behovet av
+            att stärka föreningens ekonomi inför kommande underhåll och
+            investeringar.
           </li>
           <li>
             Avgiften för 3:orna är mellan 6444 - 6698 kr och för 2:orna 5535 kr
@@ -86,17 +88,18 @@ export default function Maklarinfo() {
             Extra förråd, lokaler och en MC-parkering finns att hyra billigt
           </li>
           <li>
-            Styrelsen arbetar aktivt med att ta fram en långsiktig ekonomisk plan, baserad på den uppdaterade underhållsplanen, för att säkerställa föreningens ekonomiska stabilitet och bevara fastighetens långsiktiga värde.
+            Styrelsen arbetar aktivt med att ta fram en långsiktig ekonomisk
+            plan, baserad på den uppdaterade underhållsplanen, för att
+            säkerställa föreningens ekonomiska stabilitet och bevara
+            fastighetens långsiktiga värde.
           </li>
         </ul>
 
         <h2>Genomfört underhåll och uppgraderingar</h2>
         <ul>
           <li>
-            Underhållsplan för perioden 2016 – 2035 finns att ladda ner som{" "}
-            <a href="/underhallsplan-2016-2035.pdf" rel="noopener noreferrer">
-              PDF här
-            </a>
+            Underhållsplan för perioden 2025 - 2075 finns att ladda ner som{" "}
+            <a href="/2025-underhallsplan-50-ar.pdf">PDF här</a>
           </li>
           <li>
             Innergården renoverades 2007, sköts om 1 gång/månad av Sekant
@@ -136,7 +139,7 @@ export default function Maklarinfo() {
         <ul>
           <li>
             Stadgar finns att ladda ner som{" "}
-            <a href="/Stadgar-BRF-Kastanjen-4.pdf" rel="noopener noreferrer">
+            <a href="/2025Stadgar-BRF-Kastanjen4.pdf" rel="noopener noreferrer">
               PDF här
             </a>
           </li>
