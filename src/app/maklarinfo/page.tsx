@@ -67,12 +67,16 @@ export default function Maklarinfo() {
         <h2>Föreningens ekonomi och medlemsavgifter</h2>
         <ul>
           <li>
-            Föreningen äger tomten. Friköp av tomträtt från Malmö kommun gjordes
-            2021
+            Föreningen äger tomten. Friköp av tomträtt från Malmö kommun gjordes 2021
           </li>
-          <li>Avgiften höjdes i maj 2025, inga fler planerade höjningar</li>
+          <li>Föreningen genomförde en avgiftshöjning i maj 2025.
+          </li>
           <li>
-            Avgiften för 3:orna är mellan 6444 – 6698 kr och för 2:orna 5535 kr
+            En ytterligare justering av avgiften med cirka 9-15 % planeras att genomföras innan år 2026.
+            Bakgrunden till höjningen är behovet av att stärka föreningens ekonomi inför kommande underhåll och investeringar.
+          </li>
+          <li>
+            Avgiften för 3:orna är mellan 6444 - 6698 kr och för 2:orna 5535 kr
           </li>
           <li>
             I avgiften ingår värme, vatten, förråd, bredband 100 Mbit, TV Bas HD
@@ -80,6 +84,9 @@ export default function Maklarinfo() {
           </li>
           <li>
             Extra förråd, lokaler och en MC-parkering finns att hyra billigt
+          </li>
+          <li>
+            Styrelsen arbetar aktivt med att ta fram en långsiktig ekonomisk plan, baserad på den uppdaterade underhållsplanen, för att säkerställa föreningens ekonomiska stabilitet och bevara fastighetens långsiktiga värde.
           </li>
         </ul>
 
@@ -116,7 +123,8 @@ export default function Maklarinfo() {
             Målning av takplåt uppskjutet på obestämd tid då den bedömdes vara i
             gott skick 2025
           </li>
-          <li>Reparering av tegelfasad på innergården</li>
+          <li>Reparering av tegelfasad på innergården - Påbörjat v43 2025</li>
+          <li>Spolning av stammar - Planerat v45 2025</li>
           <li>
             Besiktning, underhåll och upprustning av expansionskärl, röklucka,
             cementmosaikgolv, trappor och lekutrustning kommande år för att
