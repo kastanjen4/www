@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Mäklarinformation - BRF Kastanjen 4",
   description:
-    "Samlad information för mäklare och intressenter om BRF Kastanjen 4. Årsredovisningar, ekonomi, genomfört underhåll, avgifter och stadgar. Föreningen äger tomten, avgift 5535-6698 kr/mån.",
+    "Samlad information för mäklare och intressenter om BRF Kastanjen 4. Årsredovisningar, ekonomi, genomfört underhåll, avgifter och stadgar. Föreningen äger tomten, avgift 6572-7795 kr/mån.",
   keywords: [
     "mäklarinfo",
     "årsredovisning",
@@ -72,13 +72,13 @@ export default function Maklarinfo() {
           </li>
           <li>Föreningen genomförde en avgiftshöjning i maj 2025.</li>
           <li>
-            En ytterligare justering av avgiften med cirka 9-15 % planeras att
-            genomföras innan år 2026. Bakgrunden till höjningen är behovet av
-            att stärka föreningens ekonomi inför kommande underhåll och
+            Ytterligare justering av avgiften genomfördes inför 2026 för att
+            stärka föreningens ekonomi inför kommande underhåll och
             investeringar.
           </li>
           <li>
-            Avgiften för 3:orna är mellan 6444 - 6698 kr och för 2:orna 5535 kr
+            Avgiften för 3:orna är mellan 7 617 - 7 795 kr/mån och för 2:orna
+            6 572 kr/mån.
           </li>
           <li>
             I avgiften ingår värme, vatten, förråd, bredband 100 Mbit, TV Bas HD
