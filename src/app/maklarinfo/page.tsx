@@ -28,16 +28,16 @@ export const metadata: Metadata = {
 export default function Maklarinfo() {
   const annualReports = [
     {
+      title: "Årsredovisning 2025",
+      href: "/Arsredovisning-2025-inkl-revisionsberattelse.pdf",
+    },
+    {
       title: "Årsredovisning 2024",
       href: "/Brf-Kastanjen-4-Arsredovisning-2024.pdf",
     },
     {
       title: "Årsredovisning 2023",
       href: "/Arsredovisning-2023-inkl-revisionsberattelse-2023.pdf",
-    },
-    {
-      title: "Årsredovisning 2022",
-      href: "/Arsredovisning-2022.pdf",
     },
   ];
 
@@ -117,6 +117,8 @@ export default function Maklarinfo() {
             Uppgradering av tvättstuga med nya tvättmaskiner och torktumlare
             2023
           </li>
+          <li>Reparation av tegelfasad på innergården Q4 2025</li>
+          <li>Spolning av stammar Q4 2025</li>
         </ul>
 
         <h2>Kommande underhåll och renoveringar</h2>
@@ -126,8 +128,6 @@ export default function Maklarinfo() {
             Målning av takplåt uppskjutet på obestämd tid då den bedömdes vara i
             gott skick 2025
           </li>
-          <li>Reparering av tegelfasad på innergården - Påbörjat v43 2025</li>
-          <li>Spolning av stammar - Planerat v45 2025</li>
           <li>
             Besiktning, underhåll och upprustning av expansionskärl, röklucka,
             cementmosaikgolv, trappor och lekutrustning kommande år för att
