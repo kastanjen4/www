@@ -85,8 +85,8 @@ export default function Maklarinfo() {
             Föreningen äger tomten (friköp från Malmö kommun 2021).
           </li>
           <li>
-            Avgiftsjustering genomfördes i maj 2025 samt inför 2026 för att
-            stärka ekonomin inför kommande underhåll och investeringar.
+            Avgiftsjustering genomfördes i maj 2025 samt en större höjning 1 januari 2026 för att
+            stärka ekonomin inför kommande underhåll och investeringar. Framöver förväntas normala justeringar mot index & inflation. 
           </li>
           <li>
             Styrelsen arbetar aktivt med en långsiktig ekonomisk plan baserad
@@ -102,6 +102,7 @@ export default function Maklarinfo() {
           <a href="/2025-underhallsplan-50-ar.pdf">PDF här</a>.
         </p>
         <ul>
+          <li>Obligatorisk ventilationskontroll (OVK) Q1 2026</li>
           <li>
             Byte av röklucka – gammal krutladdningsmodell ersatt med ny enligt
             modern standard – Q1 2026
@@ -124,15 +125,13 @@ export default function Maklarinfo() {
           <li>Hisslinor och brythjul renoverade – 2017</li>
           <li>Omisolering av taket – 2014</li>
           <li>
-            Innergården renoverad – 2007 (sköts om 1 gång/månad av Sekant
-            fastighetsservice)
+            Innergården renoverad – 2007
           </li>
         </ul>
 
         <h2>Kommande underhåll och renoveringar</h2>
         <ul>
-          <li>Inga större renoveringsprojekt de kommande åren</li>
-          <li>Obligatorisk ventilationskontroll (OVK) planerad under 2026</li>
+          <li>Inga större renoveringsprojekt planerade de närmsta åren</li>
           <li>
             Målning av takplåt uppskjutet på obestämd tid då den bedömdes vara
             i gott skick 2025
@@ -157,7 +156,7 @@ export default function Maklarinfo() {
           </li>
           <li>
             Stadgar finns att ladda ner som{" "}
-            <a href="/2025Stadgar-BRF-Kastanjen4.pdf" rel="noopener noreferrer">
+            <a href="/2025Stadgar-BRF-Kastanjen4-Signerat.pdf" rel="noopener noreferrer">
               PDF här
             </a>
           </li>
